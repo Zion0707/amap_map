@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地图demo</title>
+    <link rel="stylesheet" href="static/css/iconfont.css">
+    <link rel="stylesheet" href="static/css/wu-ui.css">
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+#container {
+    width:100vw; 
+    height: 100vh; 
+}  
+</style>
+</head>
+<body>
+<div id="app">
+    <div id="container"></div> 
+</div>
+
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/wu-ui.js"></script>
+<script src="https://webapi.amap.com/maps?v=1.4.15&key=02b30d3994182a2256b8b4dbbb63c17a"></script>
+<script>
+    var map = new AMap.Map('container');
+    map.setZoom(15);    
+    map.plugin(['AMap.Scale'],()=>{
+        var scale = new AMap.Scale({});
+        map.addControl(scale);
+    });
+</script> 
+</body>
+</html>
