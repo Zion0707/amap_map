@@ -2,7 +2,9 @@
 	<div class="main">
 		<div id="map" class="map"></div>
 		
-		<div id="tool" class="tool"></div>
+		<div id="tool" class="tool">
+			
+		</div>
 	</div>
 </template>
 
