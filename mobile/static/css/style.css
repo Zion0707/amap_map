@@ -12,10 +12,18 @@
     left: 0;
     top: 0;
     right: 0;
-    /* bottom: 1rem; */
+    bottom: 2.5rem;
 }
 .tool{
-    height: 10px;
-    width: 18.75rem;
-    background-color: orangered;
+    border-top: 1px solid #ddd;
+    height: 2.5rem;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    left: 0;
+    right: 0;
+}
+.amap-logo,
+.amap-copyright{
+    display: none !important;
 }

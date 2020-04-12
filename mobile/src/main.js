@@ -6,7 +6,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-// import 'vant/lib/index.css'
+import 'vant/lib/index.less'
 import '../static/css/style.css'
 
 Vue.use(Button)
