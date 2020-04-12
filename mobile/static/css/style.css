@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    width: 18.75rem;
+    height: 100vh;
+    margin: 0 auto;
+}
+.map{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    /* bottom: 1rem; */
+}
+.tool{
+    height: 10px;
+    width: 18.75rem;
+    background-color: orangered;
+}

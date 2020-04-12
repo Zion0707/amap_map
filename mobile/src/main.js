@@ -1,39 +1,32 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue';
-import YDUI from 'vue-ydui'; /* 相当于import YDUI from 'vue-ydui/ydui.rem.js' */
-import 'vue-ydui/dist/ydui.rem.css';
+import Vue from 'vue'
+import {Button, Toast} from 'vant'
+import App from './App'
+import router from './router'
+import store from './store'
 
-import $ from 'jquery';
+// import 'vant/lib/index.css'
+import '../static/css/style.css'
 
-import App from './App';
-import router from './router';
-import store from './store';
+Vue.use(Button)
+   .use(Toast)
+   .use(store)
 
+Vue.config.productionTip = false
 
-Vue.use(YDUI);
-Vue.config.productionTip = false;
-
-
-import './assets/css/style.css';
-import '../static/js/ydui.flexible.js';
-
-//https://www.npmjs.com/package/vue-awesome-swiper
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-import 'swiper/dist/css/swiper.min.css';
-Vue.use(VueAwesomeSwiper);
-
-
-//调用axios的封装方法
-import httpaxios from '../static/js/httpaxios.js';
-Vue.prototype.http = httpaxios;
-
+//rem计算
+var docEl = document.documentElement, Size = docEl.clientWidth / (750 / 40); 
+docEl.style.fontSize = Size + 'px'; 
+if(Size >= 25){ 
+	Size = 20;
+	docEl.style.fontSize = '20px';
+}
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 })
