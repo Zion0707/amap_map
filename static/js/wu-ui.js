@@ -1,5 +1,5 @@
 /**
- * 参考地址: http://www.jq22.com/yanshi18087
+ * 参考地址: http://www.jq22.com/demo/wu-ui201802060054/
  * 
  * */ 
 ;(function () {
