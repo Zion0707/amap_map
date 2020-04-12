@@ -19,4 +19,6 @@ use Illuminate\Http\Request;
 
 Route::group(['prefix'=>'light'],function(){
     Route::get('list','LightController@list');
+    Route::post('create','LightController@create');
+    Route::post('remove','LightController@remove');
 });

@@ -1,3 +1,4 @@
+var api = 'http://localhost:3008/api'; // 接口地址
 var map =null;
 $(function(){
     map = new AMap.Map('container',{
@@ -39,15 +40,34 @@ $(function(){
     });
 
 
+    // 获取路灯列表
+    $.get(`${api}/light/list`, function(data){
+        if(data.code==0){
+            var list = data.data.list;
+            list.map((item, index)=>{
+                // setMarker(item);
+                var marker = new AMap.Marker({
+                    icon:'static/images/light.png',
+                    position:[item.lng, item.lat]
+                });
+                map.add(marker);
+            }); 
+        }else{
+            wu.showToast(data.msg);
+        }
+    });
+
+
 })
 
 // 定位当前位置
 function getNowLocat(){
     $('.amap-geo').click();
     map.getCity((info)=>{
-        wu.showDialog({
-            content:JSON.stringify(info),
-        });
+        console.log( JSON.stringify(info) );
+        // wu.showDialog({
+        //     content:JSON.stringify(info),
+        // });
     });
 }
 
@@ -58,12 +78,23 @@ function setMarker(opt){
     if(lng===''||lat===''){
         wu.showToast('经纬度是必须的！');
     }
-    var marker = new AMap.Marker({
-        icon:'static/images/light.png',
-        position:[lng, lat]
+    
+    $.post(`${api}/light/create`,{
+        lng,
+        lat
+    }, (data)=>{
+        if(data.code==0){
+            var marker = new AMap.Marker({
+                icon:'static/images/light.png',
+                position:[lng, lat]
+            });
+            map.add(marker);
+            console.log(lng, lat);
+        }else{
+            wu.showToast(data.msg);
+        }
     });
-    map.add(marker);
-    console.log(lng, lat);
+    
 }
 
 
