@@ -36,7 +36,7 @@ class LightController extends Controller
         }
         
         $res = $this->lightModel->create($req);
-        return $res ? $this->utilsController->responseMsg(0, 'success', null) : $this->utilsController->responseMsg(-2, '添加失败！', null);
+        return $res ? $this->utilsController->responseMsg(0, 'success', $res) : $this->utilsController->responseMsg(-2, '添加失败！', null);
     }
 
 

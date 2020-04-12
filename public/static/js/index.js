@@ -31,9 +31,9 @@ $(function(){
     }); 
 
     // 点击当前位置添加标识
-    map.on('click', (ev)=>{
+    map.on('dblclick', (ev)=>{
         // wu.showToast(ev.lnglat.getLng() + ',' + ev.lnglat.getLat())
-        setMarker({
+        setLightMarker({
             lng: ev.lnglat.getLng(),
             lat: ev.lnglat.getLat()
         });
@@ -45,12 +45,12 @@ $(function(){
         if(data.code==0){
             var list = data.data.list;
             list.map((item, index)=>{
-                // setMarker(item);
-                var marker = new AMap.Marker({
-                    icon:'static/images/light.png',
-                    position:[item.lng, item.lat]
+                var lng = item.lng;
+                var lat = item.lat;
+                var id = item.id;
+                lightMarkerShow({
+                    lng, lat, id
                 });
-                map.add(marker);
             }); 
         }else{
             wu.showToast(data.msg);
@@ -72,31 +72,43 @@ function getNowLocat(){
 }
 
 // 设置标记
-function setMarker(opt){
-    var lng = opt.lng || ''; //经度
-    var lat = opt.lat || ''; //纬度
-    if(lng===''||lat===''){
-        wu.showToast('经纬度是必须的！');
-    }
-    
+function setLightMarker(opt){
+    var lng = opt.lng;
+    var lat = opt.lat;
     $.post(`${api}/light/create`,{
         lng,
         lat
     }, (data)=>{
         if(data.code==0){
-            var marker = new AMap.Marker({
-                icon:'static/images/light.png',
-                position:[lng, lat]
+            var id = data.data.id;
+            lightMarkerShow({
+                lng, 
+                lat,
+                id
             });
-            map.add(marker);
-            console.log(lng, lat);
         }else{
             wu.showToast(data.msg);
         }
-    });
-    
+    });    
 }
 
+
+// 路灯marker点显示
+function lightMarkerShow(opt){
+    var lng = opt.lng || ''; //经度
+    var lat = opt.lat || ''; //纬度
+    var id = opt.id || '';
+    if(lng===''||lat===''){
+        wu.showToast('经纬度是必须的！');
+    }
+    var marker = new AMap.Marker({
+        icon:'static/images/light.png',
+        position:[lng, lat],
+        draggable:true, //是否允许拖拽
+    });
+    marker.id = id;
+    map.add(marker);
+}
 
 // 成功回调
 function onComplete(){
