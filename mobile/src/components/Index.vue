@@ -17,6 +17,7 @@ export default {
 
 	},
 	mounted(){
+		var _self = this;
 		var map = new AMap.Map('map',{
 			isHotspot: true,
 			zoom:15,
@@ -42,9 +43,16 @@ export default {
 			});
 			map.addControl(geolocation);
 			geolocation.getCurrentPosition();
-			// AMap.event.addListener(geolocation, 'complete', onComplete);
+			AMap.event.addListener(geolocation, 'complete', onComplete);
 			AMap.event.addListener(geolocation, 'error', onError); 
 		}); 
+
+		function onComplete(res){
+			console.log(res);
+		}
+		function onError(res){
+			console.log(res);
+		}
 	}
 }
 </script>

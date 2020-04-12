@@ -12,11 +12,11 @@
     left: 0;
     top: 0;
     right: 0;
-    bottom: 2.5rem;
+    bottom: 3.2rem;
 }
 .tool{
     border-top: 1px solid #ddd;
-    height: 2.5rem;
+    height: 3.2rem;
     position: absolute;
     bottom: 0;
     z-index: 2;
