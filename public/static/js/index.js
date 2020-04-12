@@ -104,9 +104,48 @@ function lightMarkerShow(opt){
     var marker = new AMap.Marker({
         icon:'static/images/light.png',
         position:[lng, lat],
-        draggable:true, //是否允许拖拽
+        // draggable:true, //是否允许拖拽
     });
     marker.id = id;
+    marker.on('click', function(ev){
+        var _self = this;
+        // console.log(ev);
+        wu.showAction({
+            title: '路灯操作',
+            menuArray: [
+                {
+                    title: '是否开启拖拽',
+                    value: 'draggable',
+                    color: ''
+                },
+                {
+                    title: '删除该路灯',
+                    value: 'delete',
+                    color: 'red'
+                } //如果是删除  value 必须是 "delete"
+            ],
+            success: function(res) {
+                if(res.value == "delete") {
+                    $.post(`${api}/light/remove`, {id}, function(data){
+                        if(data.code==0){
+                            _self.hide();
+                        }else{
+                            wu.showToast({
+                                icon:'icon-error',
+                                title:'删除失败！'
+                            });
+                        }
+                    });
+                }else if(res.value=='draggable'){
+                    _self.setDraggable(true);
+                }
+            }
+        })
+    });
+
+    marker.on('dragend', function(ev){
+        console.log(ev);
+    });
     map.add(marker);
 }
 

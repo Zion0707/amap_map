@@ -188,7 +188,10 @@
     cursor:pointer;
     position:relative;
     overflow:hidden;
-    padding:0 10px
+    padding:0 10px;
+}
+.wu-btn{
+    cursor: pointer;
 }
 .dialog-content .dialog-btn-confirm {
     color:#007aff
