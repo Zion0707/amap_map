@@ -1,0 +1,46 @@
+$colorff6700:#ff6700;
+$color999999:#999999;
+
+.rd-item-head{
+	padding:0.2rem 0.2rem;
+	color:#555;
+	font-size:0.32rem;
+	background-color:#fff;
+	border-bottom:1px solid #f1f1f1;
+	span{
+		padding-right:0.2rem;
+		border-right:0.08rem solid $colorff6700;
+	}
+}
+.rdl-01,
+.rdl-02{
+	width:100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.yd-list-other{
+	display: block;
+}
+.list-price{
+	color:$colorff6700;
+	line-height:0.45rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

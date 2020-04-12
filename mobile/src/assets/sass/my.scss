@@ -1,0 +1,117 @@
+@import 'conn.scss';
+
+.my-head{
+	height:1.5rem;
+	background-color:#f37d0f;
+	padding:0.2rem;
+}
+.myh-portrait{
+	border-radius:50%;
+	width:1rem;
+	height:1rem;
+	background-color:rgba(255,255,255,0.1);
+	border:0.08rem solid rgba(255,255,255,0.1);
+
+	i{
+		display: block;
+		font-size:0.8rem;
+		text-align: center;
+		line-height:0.85rem;
+		color:#f1f1f1;
+	}
+}
+.not-logged{
+	height:1.05rem;
+	line-height:1.05rem;
+
+	a, span{
+		color:#fff;
+		font-size:0.3rem;
+	}
+}
+.my-tool{
+	background-color:#fff;
+	display:flex;
+	li{
+		width:33.3333%;
+		text-align: center;
+		padding:0.3rem 0 0.2rem;
+		color:#999;
+		i{
+			display: block;
+			font-size:0.6rem;
+		}
+		span{
+			display: block;
+			line-height:0.6rem;
+		}
+	}
+}
+.re-miss{
+	text-align: center;
+	margin-top:0.8rem;
+	a,span{
+		color:#999;
+	}
+	span{
+		position:relative;
+		top:-0.02rem;
+	}
+}
+.vCode{
+	position: absolute;
+	display: block;
+	color:#fff;
+	left:5.5rem;
+	top:-0.1rem;
+	border-radius:10px;
+	width:1.5rem;
+	height:0.6rem;
+	text-align: center;
+	line-height:0.5rem;
+	font-weight:bold;
+	background-color:#fff;
+}
+.myh-avatar{
+	img{
+		width:100%;
+		height:100%;
+		background-color:#fff;
+		border-radius:50%;
+	}
+}
+
+.logout{
+	background-color:#f4f4f4;
+	color:#555;
+}
+.add-new{
+	background-color:#ff6700;
+	color:#fff;
+}
+.address-list{
+	padding:0.05rem 0.2rem;
+}
+.address-item{
+	padding:0.25rem;
+	margin:0.2rem 0;
+
+	.adi-header{
+		
+	}
+	.adi-con{
+		color:#555;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
