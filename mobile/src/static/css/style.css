@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul,li{
+    list-style-type: none;
+}
+#amap_map {
+    width:100vw; 
+    position: absolute;
+    top: 0;
+    bottom: 50px;
+}  
+.amap-logo,
+.amap-copyright{
+    display: none !important;
+}

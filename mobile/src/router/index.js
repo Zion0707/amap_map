@@ -9,8 +9,13 @@ Vue.use(VueRouter)
 		component: () => import('../views/Home.vue')
 	},
 	{
-	path: '/about',
-	name: 'About',
+		path: '/city',
+		name: 'City',
+		component: () => import('../views/City.vue')
+	},
+	{
+		path: '/about',
+		name: 'About',
 		component: () => import('../views/About.vue')
 	}
 ]

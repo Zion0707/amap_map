@@ -1,5 +1,10 @@
 <template>
 	<div class="about">
+		<div id="nav">
+			<router-link to="/city">City</router-link> |
+			<router-link to="/about">About</router-link>
+		</div>
+
 		关于
 
 		<br>
