@@ -6,7 +6,10 @@ Vue.use(VueRouter)
 	{
 		path: '/',
 		name: 'Home',
-		component: () => import('../views/Home.vue')
+		component: () => import('../views/Home.vue'),
+		meta: {
+			title: '高德地图-首页'
+		},
 	},
 	{
 		path: '/city',
@@ -24,6 +27,15 @@ const router = new VueRouter({
     // mode: 'history',
     base: process.env.BASE_URL,
     routes
+})
+
+router.beforeEach(function(to,from,next){
+    if(to.meta.title){
+        document.title = to.meta.title
+    }else{
+        document.title = 'personal learn'
+    }
+    next()
 })
 
 export default router

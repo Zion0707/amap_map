@@ -15,3 +15,9 @@ ul,li{
 .amap-copyright{
     display: none !important;
 }
+.amap-geolocation-con{
+    z-index: 999 !important;
+}
+.van-dialog{
+    border-radius: 0.4rem;
+}
