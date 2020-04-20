@@ -15,3 +15,10 @@ ul,li{
 .amap-copyright{
     display: none !important;
 }
+
+.van-dialog{
+    border-radius: .3rem;
+}
+.amap-geolocation-con{
+    z-index: 2000 !important;
+}
