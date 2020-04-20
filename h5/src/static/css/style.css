@@ -9,16 +9,20 @@ ul,li{
     width:100vw; 
     position: absolute;
     top: 0;
-    bottom: 50px;
+    bottom: 2.5rem;
 }  
 .amap-logo,
 .amap-copyright{
     display: none !important;
 }
-
-.van-dialog{
-    border-radius: .3rem;
-}
 .amap-geolocation-con{
     z-index: 2000 !important;
+}
+.page{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.van-dialog{
+    border-radius: .3rem;
 }

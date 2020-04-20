@@ -2,7 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import {Button, Dialog} from 'vant'
+import {
+	Button, 
+	Dialog,
+	Icon,
+  Tabbar,
+  TabbarItem
+} from 'vant'
 
 Vue.config.productionTip = false
 
@@ -11,6 +17,9 @@ import './static/css/style.css';
 
 Vue.use(Button)
    .use(Dialog)
+   .use(Icon)
+   .use(Tabbar)
+   .use(TabbarItem)
 
 new Vue({
   router,

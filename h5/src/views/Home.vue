@@ -1,18 +1,13 @@
 <template>
-	<div class="home">
+	<div class="page">
 		<div id="amap_map"></div>
-		<!-- <div id="tool">
-			<ul class="tool-in">
-				<li><span onclick="getNowLocat()">定位当前位置</span></li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-				<li>6</li>
-				<li>7</li>
-				<li>8</li>
-			</ul>
-		</div> -->
+
+		<van-tabbar v-model="active">
+			<van-tabbar-item icon="home-o">标签</van-tabbar-item>
+			<van-tabbar-item icon="search">标签</van-tabbar-item>
+			<van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+			<van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+		</van-tabbar>
 	</div>
 </template>
 
@@ -22,7 +17,7 @@ import $ from 'jquery'
 export default {
 	data(){
 		return {
-
+			active:0
 		}
 	},
 	methods:{
