@@ -1,23 +1,20 @@
 <template>
 	<div class="page">
 		<div id="amap_map"></div>
-
-		<van-tabbar v-model="active">
-			<van-tabbar-item icon="home-o">标签</van-tabbar-item>
-			<van-tabbar-item icon="search">标签</van-tabbar-item>
-			<van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-			<van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-		</van-tabbar>
+		<van-search class="index-search" :background="'#2aa2ff'" v-model="searchVal" placeholder="请输入搜索关键词"/>
+		<bottom-nav :active="buttonNavActive"></bottom-nav>
 	</div>
 </template>
 
 <script>
-import $ from 'jquery'
+// import $ from 'jquery';
+import BottomNav from '@/components/BottomNav.vue';
 
 export default {
 	data(){
 		return {
-			active:0
+			buttonNavActive: 0,
+			searchVal:'',
 		}
 	},
 	methods:{
@@ -68,6 +65,9 @@ export default {
 
 
 		
+	},
+	components:{
+		'bottom-nav':BottomNav
 	}
 }
 </script>

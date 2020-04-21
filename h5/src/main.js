@@ -7,7 +7,8 @@ import {
 	Dialog,
 	Icon,
   Tabbar,
-  TabbarItem
+  TabbarItem,
+  Search 
 } from 'vant'
 
 Vue.config.productionTip = false
@@ -20,6 +21,7 @@ Vue.use(Button)
    .use(Icon)
    .use(Tabbar)
    .use(TabbarItem)
+   .use(Search)
 
 new Vue({
   router,
