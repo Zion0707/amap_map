@@ -18,7 +18,27 @@ export default {
 		}
 	},
 	methods:{
-
+		// 搜索并定位
+		_searchPosition(map, opt){
+			new AMap.Autocomplete({
+				input: "index_search",
+			}).on('select', function(res){
+				console.log(res)
+				var lng = res.poi.location.lng;
+				var lat = res.poi.location.lat;
+				var marker = new AMap.Marker({
+					icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+					position: [lng, lat],
+					offset: new AMap.Pixel(-13, -30),
+					draggable: true,
+					cursor: 'move',
+					raiseOnDrag: true
+				});
+				marker.setMap(map);
+				map.setFitView();
+			});
+		},
+		
 	},
 	mounted(){
 		var _self = this;
@@ -62,16 +82,9 @@ export default {
 				// on close
 			});
 		}
-
-
-		//输入提示
-		var auto = new AMap.Autocomplete({
-			input: "index_search",
-		});
-		auto.on('complete', function(){
-			console.log('查询')
-		})
 		
+		
+		_self._searchPosition(map);
 	},
 	components:{
 		'bottom-nav':BottomNav
