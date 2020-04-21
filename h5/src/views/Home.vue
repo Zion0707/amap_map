@@ -1,7 +1,7 @@
 <template>
 	<div class="page">
 		<div id="amap_map"></div>
-		<van-search class="index-search" :background="'#2aa2ff'" v-model="searchVal" placeholder="请输入搜索关键词"/>
+		<van-search class="index-search" id="index_search" :background="'#2aa2ff'" v-model="searchVal" placeholder="请输入搜索关键词"/>
 		<bottom-nav :active="buttonNavActive"></bottom-nav>
 	</div>
 </template>
@@ -64,6 +64,13 @@ export default {
 		}
 
 
+		//输入提示
+		var auto = new AMap.Autocomplete({
+			input: "index_search",
+		});
+		auto.on('complete', function(){
+			console.log('查询')
+		})
 		
 	},
 	components:{
